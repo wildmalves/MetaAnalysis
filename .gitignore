@@ -4,5 +4,5 @@
 *.Rhistory
 /.Rproj.user/
 *.DS_Store
-Figures/
-Manuscripts/
+figures/
+manuscripts/
