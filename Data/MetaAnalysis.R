@@ -1,13 +1,11 @@
 library(DBI)
 
-metabeaver_db <- dbConnect(RSQLite::SQLite(), "../../MASTERS/MetaAnalysis/metabeaver.db")
+#### establish database connection ####
+metabeaver_db <- dbConnect(RSQLite::SQLite(), "../../MASTERS/MetaAnalysis/Data/metabeaver.db")
 
+#### add tables to the database ####
 dbExecute(metabeaver_db, "CREATE TABLE projects (
           proj_id varchar(5) PRIMARY KEY
-          );")
-
-dbExecute(metabeaver_db, "CREATE TABLE responses (
-          resp_id varchar (5) NOT NULL PRIMARY KEY,
           proj_email text,
           proj_name text,
           proj_agency varchar (15) CHECK (proj_agency IN ('State', 'Federal', 'Tribal', 'Non Profit', 'For Profit')),
@@ -15,12 +13,18 @@ dbExecute(metabeaver_db, "CREATE TABLE responses (
           proj_called text,
           proj_lead varchar (5) CHECK (proj_lead IN ('yes', 'no')),
           proj_lead_alt text,
-          proj_location text,
+          proj_location text
+          );")
+
+dbExecute(metabeaver_db, "CREATE TABLE responses (
+          resp_id varchar (5) NOT NULL PRIMARY KEY,
           FOREIGN KEY(proj_id) REFERENCES projects(proj_id)
           );")
 
 dbExecute(metabeaver_db, "CREATE TABLE questions (
           quest_id varchar text PRIMARY KEY
+          questions text,
+          answer_type text
           );")
 
 dbExecute(metabeaver_db, "CREATE TABLE answers_text (
