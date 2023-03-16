@@ -54,3 +54,12 @@ dbExecute(metabeaver_db, "CREATE TABLE answers_ca (
           FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
           FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
           );")
+
+dbExecute(metabeaver_db, "CREATE TABLE answer_type (
+          answer_type text PRIMARY KEY,
+          FOREIGN KEY (text_id) REFERENCES answers_text(text_id)
+          FOREIGN KEY (mc_id) REFERENCES answers_mc(mc_id)
+          FOREIGN KEY (ls_id) REFERENCES answers_ls(ls_id)
+          FOREIGN KEY (ca_id) REFERENCES answers_ca(ca_id)
+          FOREIGN KEY (quest_id) REFERENCES questions(quest_id)
+          );")

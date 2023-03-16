@@ -1,34 +1,133 @@
-# Cross-references {#cross}
+# Database Structure
 
-Cross-references make it easier for your readers to find and link to elements in your book.
+The package `DBI` was used to create database and tables.
 
-## Chapters and sub-chapters
+## Database Creation
 
-There are two steps to cross-reference any heading:
+metabeaver_db <- dbConnect(RSQLite::SQLite(), "../../MASTERS/MetaAnalysis/Data/metabeaver.db")
 
-1. Label the heading: `# Hello world {#nice-label}`. 
-    - Leave the label off if you like the automated heading generated based on your heading title: for example, `# Hello world` = `# Hello world {#hello-world}`.
-    - To label an un-numbered heading, use: `# Hello world {-#nice-label}` or `{# Hello world .unnumbered}`.
+## Tables
 
-1. Next, reference the labeled heading anywhere in the text using `\@ref(nice-label)`; for example, please see Chapter \@ref(cross). 
-    - If you prefer text as the link instead of a numbered reference use: [any text you want can go here](#cross).
+responses, 
+projects, 
+questions, 
+answers_text, 
+answers_mc, 
+answers_ls, 
+answers_ca, 
+answer_type.
 
-## Captioned figures and tables
 
-Figures and tables *with captions* can also be cross-referenced from elsewhere in your book using `\@ref(fig:chunk-label)` and `\@ref(tab:chunk-label)`, respectively.
+### responses 
+ 
+    - TEXT DESCRIPTION
 
-See Figure \@ref(fig:nice-fig).
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center', fig.alt='Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE responses (
+          resp_id varchar (5) NOT NULL PRIMARY KEY,
+          FOREIGN KEY(proj_id) REFERENCES projects(proj_id)
+          );")
 ```
 
-Don't miss Table \@ref(tab:nice-tab).
+### projects
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(pressure, 10), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
+    - TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE projects (
+          proj_id varchar(5) PRIMARY KEY
+          proj_email text,
+          proj_name text,
+          proj_agency varchar (15) CHECK (proj_agency IN ('State', 'Federal', 'Tribal', 'Non Profit', 'For Profit')),
+          proj_501c3 varchar (15) CHECK (proj_501c3 IN ('501c3', 'fiscal sponsor')),
+          proj_called text,
+          proj_lead varchar (5) CHECK (proj_lead IN ('yes', 'no')),
+          proj_lead_alt text,
+          proj_location text
+          );")
+```
+
+### questions
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE questions (
+          quest_id varchar text PRIMARY KEY
+          questions text,
+          answer_type text
+          );")
+```
+
+### answers_text
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE answers_text (
+          text_id text PRIMARY KEY,
+          answer text,
+          FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
+          FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
+          );")
+```
+
+### answers-mc
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE answers_mc (
+          mc_id text PRIMARY KEY,
+          answer text,
+          FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
+          FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
+          );")
+```
+
+### answers_ls
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE answers_ls (
+          ls_id text PRIMARY KEY,
+          answer text,
+          FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
+          FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
+          );")
+```
+
+### answers_ca
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE answers_ca (
+          ca_id text PRIMARY KEY,
+          answer text,
+          FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
+          FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
+          );")
+```
+
+### answer_type
+
+    -TEXT DESCRIPTION
+
+```{r, eval = FALSE, echo = TRUE}
+    dbExecute(metabeaver_db, "CREATE TABLE answer_type (
+          answer_type text PRIMARY KEY,
+          FOREIGN KEY (text_id) REFERENCES answers_text(text_id)
+          FOREIGN KEY (mc_id) REFERENCES answers_mc(mc_id)
+          FOREIGN KEY (ls_id) REFERENCES answers_ls(ls_id)
+          FOREIGN KEY (ca_id) REFERENCES answers_ca(ca_id)
+          FOREIGN KEY (quest_id) REFERENCES questions(quest_id)
+          );")
+```
+
+## Relational Database Diagram
+
+```{r image, fig.cap="Relational Database Diagram", fig.align='center', out.width='100%'}
+knitr::include_graphics("/Users/mollyalves/MASTERS/MetaAnalysis/Data/ReproDat_Assignment3.pdf")
 ```

@@ -1,11 +1,27 @@
-# Establishing a Database Structure 
+# Introduction
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+Beavers (American, Castor canadensis; Eurasian, Castor fiber) have long been valued for their dense fur and aromatic castor, resulting in their near extirpation from North America and Europe in the late 19th century (Halley et al., 2012; Halley and Rossel, 2002; Law et al., 2017; Leopold, 1972; Pattie, 1833; Seton, 1929). Their systematic removal led to a loss of wetland habitat and ecosystem services provided by the beaver’s damming activity (Rossel et al., 2005; Scamardo et al., 2021). Modern harvest restrictions have enabled their recovery in some areas (Seton, 1929; State of California FGC Div 4, Part 3, Ch 2, Art 1, Sec 4001, 2020; Washington State Legislature RCW 77.15.194, 2003); however, there are many barriers to natural recolonization, whether anthropogenic (infrastructure, stream channelization), ecological (climate impacts to seasonal flow and vegetative communities), or political (misclassification and social carrying capacity) (Baldwin, 2017).
 
-## A section
+A growing body of scientific literature supports that beaver activity benefits freshwater ecosystems, so translocation has not only become a tool for conflict resolution, but also for ecological restoration (Brazier et al., 2021; Dittbrenner et al., 2022) and creating climate resilience (Jordan and Fairfax, 2022; Whipple, 2019). Demonstrating the ecological benefits that beavers can provide has further prompted the desire for beaver recovery (Dittbrenner et al., 2022; Fairfax and Whittle, 2020; Pollock et al., 2003; Pollock et al., 2017). Therefore, beaver translocations that result in the establishment of localized populations can serve as a form of nature-based restoration for critical ecosystems, such as wetlands (Brazier et al., 2021; McKinstry et al., 2001).
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+Translocations are conducted by a wide variety of people – from nonprofit organizations and governmental agencies to volunteers and consulting companies - all which may lack the time and resources for monitoring and disseminating methodology. Datasets can go unshared and no effort has been made to pool existing data to evaluate the efficacy of these methods for beaver managers, resulting in a lack of peer-reviewed publications that can inform existing and future beaver translocation outcomes (Pilliod et al., 2018). Conducting a metanalysis of existing projects offers an innovative way to define best practices. Identifying methods for the different definitions of success can inform efforts and encourage implementation of more humane beaver management policies.
 
-### An unnumbered section {-}
+## Objectives
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+My thesis will analyze the cumulative data from all contributing beaver translocation projects to create guiding principles for humane and successful beaver translocation. I will perform an exploratory analysis of relationships in the data that correlate varying methodologies to different metrics of success. To achieve this, the major objectives for my thesis are to 1.) Accumulate and analyze beaver translocation methodology data from current and past translocations to identify best methods for achieving beaver translocation success; and 2.) Develop a database of existing beaver management policies where beaver translocation is occurring.
+
+## Geographic Scope
+
+I will conduct this study by developing a database of beaver translocation methodology and policy contributions from agencies, nonprofit organizations, volunteers, and universities from all U.S. states, Canadian provinces, and Eurasian countries in the northern hemisphere where beavers are a native species (Fig 1) and are being translocated. In North America, the study subject is the North American beaver and in Eurasia, the study subject is the Eurasian beaver.
+
+## Methods
+
+To be included...
+
+## Expected Products
+
+I will produce a Master’s thesis documenting the study results, a white paper on best practices for beaver translocations, which may include findings from the beaver management policy investigation, and publish one or more scientific articles to peer-reviewed journals. Results will be disseminated to all data contributors of the project. Results of the research will also be disseminated through professional presentations. I expect to give at least two presentations at scientific meetings, such as The Wildlife Society, Ecological Society of America, BeaverCON, and the International Beaver Conference that will be held in Scotland in 2025. These products will define the effectiveness of translocation methods to inform existing and future beaver translocation practices and beaver management policies.
+
+## Next Steps
+
+At the conclusion of this study, I will propose the creation of an International Beaver Translocation Network to data contributors. This network will connect translocators in similar regions so that they can collaborate and share information and best practices for ongoing beaver translocation studies.
