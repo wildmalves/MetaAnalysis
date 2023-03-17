@@ -14,9 +14,7 @@ questions,
 answers_text, 
 answers_mc, 
 answers_ls, 
-answers_ca, 
-answer_type.
-
+answers_ca.
 
 ### responses 
  
@@ -55,7 +53,7 @@ answer_type.
     dbExecute(metabeaver_db, "CREATE TABLE questions (
           quest_id varchar text PRIMARY KEY
           questions text,
-          answer_type text
+          quest_type varchar (5) CHECK (quest_type IN ('text', 'mc', 'ls', 'ca')),
           );")
 ```
 
@@ -111,20 +109,6 @@ answer_type.
           );")
 ```
 
-### answer_type
-
-    -TEXT DESCRIPTION
-
-```{r, eval = FALSE, echo = TRUE}
-    dbExecute(metabeaver_db, "CREATE TABLE answer_type (
-          answer_type text PRIMARY KEY,
-          FOREIGN KEY (text_id) REFERENCES answers_text(text_id)
-          FOREIGN KEY (mc_id) REFERENCES answers_mc(mc_id)
-          FOREIGN KEY (ls_id) REFERENCES answers_ls(ls_id)
-          FOREIGN KEY (ca_id) REFERENCES answers_ca(ca_id)
-          FOREIGN KEY (quest_id) REFERENCES questions(quest_id)
-          );")
-```
 
 ## Relational Database Diagram
 

@@ -24,7 +24,7 @@ dbExecute(metabeaver_db, "CREATE TABLE responses (
 dbExecute(metabeaver_db, "CREATE TABLE questions (
           quest_id varchar text PRIMARY KEY
           questions text,
-          answer_type text
+          quest_type varchar (5) CHECK (quest_type IN ('text', 'mc', 'ls', 'ca')),
           );")
 
 dbExecute(metabeaver_db, "CREATE TABLE answers_text (
@@ -53,13 +53,4 @@ dbExecute(metabeaver_db, "CREATE TABLE answers_ca (
           answer text,
           FOREIGN KEY(resp_id) REFERENCES responses(resp_id)
           FOREIGN KEY(quest_id) REFERENCES questions(quest_id)
-          );")
-
-dbExecute(metabeaver_db, "CREATE TABLE answer_type (
-          answer_type text PRIMARY KEY,
-          FOREIGN KEY (text_id) REFERENCES answers_text(text_id)
-          FOREIGN KEY (mc_id) REFERENCES answers_mc(mc_id)
-          FOREIGN KEY (ls_id) REFERENCES answers_ls(ls_id)
-          FOREIGN KEY (ca_id) REFERENCES answers_ca(ca_id)
-          FOREIGN KEY (quest_id) REFERENCES questions(quest_id)
           );")
