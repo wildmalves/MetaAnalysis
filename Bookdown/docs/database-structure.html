@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Database Structure | A Metanalysis of Beaver Translocation Methods to Inform Establishment Success and Beaver Management Policy</title>
-  <meta name="description" content="This is a practice bookdown doc for Repro Dat 2023." />
+  <meta name="description" content="This is a draft bookdown doc for Repro Dat 2023." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Database Structure | A Metanalysis of Beaver Translocation Methods to Inform Establishment Success and Beaver Management Policy" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is a practice bookdown doc for Repro Dat 2023." />
+  <meta property="og:description" content="This is a draft bookdown doc for Repro Dat 2023." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 3 Database Structure | A Metanalysis of Beaver Translocation Methods to Inform Establishment Success and Beaver Management Policy" />
   
-  <meta name="twitter:description" content="This is a practice bookdown doc for Repro Dat 2023." />
+  <meta name="twitter:description" content="This is a draft bookdown doc for Repro Dat 2023." />
   
 
 <meta name="author" content="Molly Alves" />
 
 
-<meta name="date" content="2023-03-16" />
+<meta name="date" content="2023-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="metaanalysis.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -179,16 +179,14 @@ div.csl-indent {
 <li class="chapter" data-level="3.2.5" data-path="database-structure.html"><a href="database-structure.html#answers-mc"><i class="fa fa-check"></i><b>3.2.5</b> answers-mc</a></li>
 <li class="chapter" data-level="3.2.6" data-path="database-structure.html"><a href="database-structure.html#answers_ls"><i class="fa fa-check"></i><b>3.2.6</b> answers_ls</a></li>
 <li class="chapter" data-level="3.2.7" data-path="database-structure.html"><a href="database-structure.html#answers_ca"><i class="fa fa-check"></i><b>3.2.7</b> answers_ca</a></li>
-<li class="chapter" data-level="3.2.8" data-path="database-structure.html"><a href="database-structure.html#answer_type"><i class="fa fa-check"></i><b>3.2.8</b> answer_type</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="database-structure.html"><a href="database-structure.html#relational-database-diagram"><i class="fa fa-check"></i><b>3.3</b> Relational Database Diagram</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="metaanalysis.html"><a href="metaanalysis.html"><i class="fa fa-check"></i><b>4</b> MetaAnalysis</a>
+<li class="chapter" data-level="4" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>4</b> References</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="metaanalysis.html"><a href="metaanalysis.html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
-<li class="chapter" data-level="4.2" data-path="metaanalysis.html"><a href="metaanalysis.html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="references.html"><a href="references.html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
+<li class="chapter" data-level="4.2" data-path="references.html"><a href="references.html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -211,7 +209,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="database-structure" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Database Structure<a href="database-structure.html#database-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The package <code>DBI</code> was used to create database and tables.</p>
+<p>The package <code>DBI</code> was used to create the database and tables.</p>
 <div id="database-creation" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Database Creation<a href="database-structure.html#database-creation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>metabeaver_db &lt;- dbConnect(RSQLite::SQLite(), “../../MASTERS/MetaAnalysis/Data/metabeaver.db”)</p>
@@ -224,11 +222,10 @@ questions,
 answers_text,
 answers_mc,
 answers_ls,
-answers_ca,
-answer_type.</p>
+answers_ca.</p>
 <div id="responses" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> responses<a href="database-structure.html#responses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>- TEXT DESCRIPTION</code></pre>
+<pre><code>- This table will contain all responses submitted to the Google Forms survey.</code></pre>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database-structure.html#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE responses (</span></span>
 <span id="cb2-2"><a href="database-structure.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">          resp_id varchar (5) NOT NULL PRIMARY KEY,</span></span>
 <span id="cb2-3"><a href="database-structure.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY(proj_id) REFERENCES projects(proj_id)</span></span>
@@ -236,7 +233,7 @@ answer_type.</p>
 </div>
 <div id="projects" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> projects<a href="database-structure.html#projects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>- TEXT DESCRIPTION</code></pre>
+<pre><code>- This table will contain information about all respondents projects and contact information.</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="database-structure.html#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE projects (</span></span>
 <span id="cb4-2"><a href="database-structure.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">          proj_id varchar(5) PRIMARY KEY</span></span>
 <span id="cb4-3"><a href="database-structure.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">          proj_email text,</span></span>
@@ -251,16 +248,16 @@ answer_type.</p>
 </div>
 <div id="questions" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> questions<a href="database-structure.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
+<pre><code>-This table will contain all of the questions and types of questions that will be asked in the Google Forms survey.</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="database-structure.html#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE questions (</span></span>
 <span id="cb6-2"><a href="database-structure.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">          quest_id varchar text PRIMARY KEY</span></span>
 <span id="cb6-3"><a href="database-structure.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">          questions text,</span></span>
-<span id="cb6-4"><a href="database-structure.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">          answer_type text</span></span>
+<span id="cb6-4"><a href="database-structure.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">          quest_type varchar (5) CHECK (quest_type IN (&#39;text&#39;, &#39;mc&#39;, &#39;ls&#39;, &#39;ca&#39;)),</span></span>
 <span id="cb6-5"><a href="database-structure.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">          );&quot;</span>)</span></code></pre></div>
 </div>
 <div id="answers_text" class="section level3 hasAnchor" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> answers_text<a href="database-structure.html#answers_text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
+<pre><code>-This table will contain all answers to short and long answer questions.</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="database-structure.html#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE answers_text (</span></span>
 <span id="cb8-2"><a href="database-structure.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">          text_id text PRIMARY KEY,</span></span>
 <span id="cb8-3"><a href="database-structure.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">          answer text,</span></span>
@@ -270,7 +267,7 @@ answer_type.</p>
 </div>
 <div id="answers-mc" class="section level3 hasAnchor" number="3.2.5">
 <h3><span class="header-section-number">3.2.5</span> answers-mc<a href="database-structure.html#answers-mc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
+<pre><code>-This table will contain all answers to multiple choice questions.</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="database-structure.html#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE answers_mc (</span></span>
 <span id="cb10-2"><a href="database-structure.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">          mc_id text PRIMARY KEY,</span></span>
 <span id="cb10-3"><a href="database-structure.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">          answer text,</span></span>
@@ -280,7 +277,7 @@ answer_type.</p>
 </div>
 <div id="answers_ls" class="section level3 hasAnchor" number="3.2.6">
 <h3><span class="header-section-number">3.2.6</span> answers_ls<a href="database-structure.html#answers_ls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
+<pre><code>-This table will contain all answers to linear scale questions.</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="database-structure.html#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE answers_ls (</span></span>
 <span id="cb12-2"><a href="database-structure.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">          ls_id text PRIMARY KEY,</span></span>
 <span id="cb12-3"><a href="database-structure.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">          answer text,</span></span>
@@ -290,7 +287,7 @@ answer_type.</p>
 </div>
 <div id="answers_ca" class="section level3 hasAnchor" number="3.2.7">
 <h3><span class="header-section-number">3.2.7</span> answers_ca<a href="database-structure.html#answers_ca" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
+<pre><code>-This table will contain all answers to check all that apply questions.</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="database-structure.html#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE answers_ca (</span></span>
 <span id="cb14-2"><a href="database-structure.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="st">          ca_id text PRIMARY KEY,</span></span>
 <span id="cb14-3"><a href="database-structure.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">          answer text,</span></span>
@@ -298,22 +295,10 @@ answer_type.</p>
 <span id="cb14-5"><a href="database-structure.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY(quest_id) REFERENCES questions(quest_id)</span></span>
 <span id="cb14-6"><a href="database-structure.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">          );&quot;</span>)</span></code></pre></div>
 </div>
-<div id="answer_type" class="section level3 hasAnchor" number="3.2.8">
-<h3><span class="header-section-number">3.2.8</span> answer_type<a href="database-structure.html#answer_type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>-TEXT DESCRIPTION</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="database-structure.html#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dbExecute</span>(metabeaver_db, <span class="st">&quot;CREATE TABLE answer_type (</span></span>
-<span id="cb16-2"><a href="database-structure.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">          answer_type text PRIMARY KEY,</span></span>
-<span id="cb16-3"><a href="database-structure.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY (text_id) REFERENCES answers_text(text_id)</span></span>
-<span id="cb16-4"><a href="database-structure.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY (mc_id) REFERENCES answers_mc(mc_id)</span></span>
-<span id="cb16-5"><a href="database-structure.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY (ls_id) REFERENCES answers_ls(ls_id)</span></span>
-<span id="cb16-6"><a href="database-structure.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY (ca_id) REFERENCES answers_ca(ca_id)</span></span>
-<span id="cb16-7"><a href="database-structure.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="st">          FOREIGN KEY (quest_id) REFERENCES questions(quest_id)</span></span>
-<span id="cb16-8"><a href="database-structure.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">          );&quot;</span>)</span></code></pre></div>
-</div>
 </div>
 <div id="relational-database-diagram" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Relational Database Diagram<a href="database-structure.html#relational-database-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="database-structure.html#cb17-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;/Users/mollyalves/MASTERS/MetaAnalysis/Data/ReproDat_Assignment3.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database-structure.html#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;/Users/mollyalves/MASTERS/MetaAnalysis/Data/ReproDat_Assignment3.pdf&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:image"></span>
 <embed src="../../Data/ReproDat_Assignment3.pdf" title="Relational Database Diagram" width="100%" type="application/pdf" />
 <p class="caption">
@@ -329,7 +314,7 @@ Figure 3.1: Relational Database Diagram
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="metaanalysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

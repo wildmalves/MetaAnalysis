@@ -1,6 +1,6 @@
 # Database Structure
 
-The package `DBI` was used to create database and tables.
+The package `DBI` was used to create the database and tables.
 
 ## Database Creation
 
@@ -18,7 +18,7 @@ answers_ca.
 
 ### responses 
  
-    - TEXT DESCRIPTION
+    - This table will contain all responses submitted to the Google Forms survey.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE responses (
@@ -29,7 +29,7 @@ answers_ca.
 
 ### projects
 
-    - TEXT DESCRIPTION
+    - This table will contain information about all respondents projects and contact information.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE projects (
@@ -47,7 +47,7 @@ answers_ca.
 
 ### questions
 
-    -TEXT DESCRIPTION
+    -This table will contain all of the questions and types of questions that will be asked in the Google Forms survey.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE questions (
@@ -59,7 +59,7 @@ answers_ca.
 
 ### answers_text
 
-    -TEXT DESCRIPTION
+    -This table will contain all answers to short and long answer questions.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE answers_text (
@@ -72,7 +72,7 @@ answers_ca.
 
 ### answers-mc
 
-    -TEXT DESCRIPTION
+    -This table will contain all answers to multiple choice questions.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE answers_mc (
@@ -85,7 +85,7 @@ answers_ca.
 
 ### answers_ls
 
-    -TEXT DESCRIPTION
+    -This table will contain all answers to linear scale questions.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE answers_ls (
@@ -98,7 +98,7 @@ answers_ca.
 
 ### answers_ca
 
-    -TEXT DESCRIPTION
+    -This table will contain all answers to check all that apply questions.
 
 ```{r, eval = FALSE, echo = TRUE}
     dbExecute(metabeaver_db, "CREATE TABLE answers_ca (
